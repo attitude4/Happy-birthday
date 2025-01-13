@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, Anuja!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: #ff9a9e;
+      overflow: hidden;
+      color: #fff;
+    }
+    .slide {
+      display: none;
+      width: 100vw;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      background: linear-gradient(to bottom, #ff758c, #ff7eb3);
+      transition: opacity 0.5s;
+    }
+    .slide.active {
+      display: flex;
+    }
+    h1, h2 {
+      margin: 0;
+    }
+    h1 {
+      font-size: 3rem;
+      animation: fadeIn 1s ease-in-out;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .options {
+      display: flex;
+      gap: 20px;
+    }
+    .options button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .options button:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+    .final-slide {
+      background: linear-gradient(to bottom, #fad0c4, #ff9a9e);
+    }
+    .confetti {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .funny-message {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      color: #222;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Slide 1 -->
+  <div class="slide active" id="slide-1">
+    <h1>Hi Anuja! 🎉</h1>
+    <h2>Do you want to see something special?</h2>
+    <div class="options">
+      <button onclick="nextSlide(2)">Yes!</button>
+      <button onclick="nextSlide(3)">No</button>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide" id="slide-2">
+    <h1>Thank You for saying YES! 💖</h1>
+    <h2>Are you ready for your surprise?</h2>
+    <div class="options">
+      <button onclick="nextSlide(4)">Absolutely!</button>
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide" id="slide-3">
+    <h1>Oh no! 😢</h1>
+    <h2>Come on, it’s your birthday, don’t say no!</h2>
+    <div class="options">
+      <button onclick="nextSlide(1)">Go Back</button>
+    </div>
+  </div>
+
+  <!-- Final Slide -->
+  <div class="slide final-slide" id="slide-4">
+    <h1>Happy Birthday, Anuja! 🎂🎁</h1>
+    <h2>You're amazing, and today is all about YOU! 💐</h2>
+    <img src="https://www.animatedimages.org/data/media/562/animated-happy-birthday-image-0074.gif" alt="Happy Birthday" width="300">
+    <div class="confetti">
+      <img src="https://i.gifer.com/1rGq.gif" alt="Confetti Animation" width="100%">
+    </div>
+    <div class="funny-message">
+      <p>🎉 Here's a quick reminder:</p>
+      <p>1. Calories don’t count today. Eat ALL the cake. 🎂</p>
+      <p>2. Dance like nobody’s watching… but we’re totally watching. 💃🕺</p>
+      <p>3. You’re officially another year closer to free senior discounts! 😂</p>
+      <p>Enjoy your day, Queen Anuja! 👑</p>
+    </div>
+  </div>
+
+  <script>
+    // Function to navigate between slides
+    function nextSlide(slideNumber) {
+      const slides = document.querySelectorAll('.slide');
+      slides.forEach(slide => slide.classList.remove('active'));
+      document.getElementById(`slide-${slideNumber}`).classList.add('active');
+    }
+  </script>
+</body>
+</html>
